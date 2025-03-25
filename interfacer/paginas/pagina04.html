@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabelas de Produtos de Acampamento</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+    </style>
+
+<style>
+
+    a{
+        color:rgb(1, 223, 12);
+        text-decoration: none;
+        translate:color0.3s;
+    
+    }
+    a:hover{
+        color: blueviolet;
+        font-size: 20px;
+
+    }  
+      
+
+      
+</style>
+
+</head>
+<body>
+
+    <br />
+    <br />
+    <a href="../index.html"><h1>inicial</h1></a>
+    <hr>
+    <a href="https://www.lojaaventura.com.br/" target="_blank">
+        <h1>Acessor lojaaventura</h1>
+    </a>
+    <a href="./pagina01.html"></a>
+    <hr>
+    <a href="./pagina02.html"><h1>aventura</h1></a>
+    <hr>
+    <a href="./pagina03.html"><h1>tutorial de uso dos equipamento</h1></a>
+    <hr>
+   
+<div id="tabelas"></div>
+
+<script>
+    const produtos = [
+        {
+            categoria: "Barracas",
+            modelos: [
+                { nome: "Barraca A", preco: ["R$ 200,00", "R$ 350,00", "R$ 500,00"] },
+                { nome: "Barraca B", preco: ["R$ 250,00", "R$ 400,00", "R$ 600,00"] },
+                { nome: "Barraca C", preco: ["R$ 300,00", "R$ 450,00", "R$ 700,00"] }
+            ]
+        },
+        {
+            categoria: "Sacos de Dormir",
+            modelos: [
+                { nome: "Saco de Dormir A", preco: ["R$ 100,00", "R$ 150,00", "R$ 250,00"] },
+                { nome: "Saco de Dormir B", preco: ["R$ 120,00", "R$ 180,00", "R$ 300,00"] },
+                { nome: "Saco de Dormir C", preco: ["R$ 140,00", "R$ 200,00", "R$ 350,00"] }
+            ]
+        },
+        {
+            categoria: "Fogareiros",
+            modelos: [
+                { nome: "Fogareiro A", preco: ["R$ 80,00", "R$ 120,00", "R$ 200,00"] },
+                { nome: "Fogareiro B", preco: ["R$ 90,00", "R$ 130,00", "R$ 220,00"] },
+                { nome: "Fogareiro C", preco: ["R$ 100,00", "R$ 150,00", "R$ 250,00"] }
+            ]
+        },
+        {
+            categoria: "Lanternas",
+            modelos: [
+                { nome: "Lanterna A", preco: ["R$ 50,00", "R$ 80,00", "R$ 120,00"] },
+                { nome: "Lanterna B", preco: ["R$ 60,00", "R$ 90,00", "R$ 150,00"] },
+                { nome: "Lanterna C", preco: ["R$ 70,00", "R$ 100,00", "R$ 180,00"] }
+            ]
+        },
+        {
+            categoria: "Mochilas de Camping",
+            modelos: [
+                { nome: "Mochila A", preco: ["R$ 150,00", "R$ 250,00", "R$ 400,00"] },
+                { nome: "Mochila B", preco: ["R$ 180,00", "R$ 280,00", "R$ 450,00"] },
+                { nome: "Mochila C", preco: ["R$ 200,00", "R$ 300,00", "R$ 500,00"] }
+            ]
+        }
+    ];
+
+    const tabelasDiv = document.getElementById('tabelas');
+
+    produtos.forEach(produto => {
+        let tabela = `<h2>${produto.categoria}</h2><table>
+                        <tr>
+                            <th>Modelo</th>
+                            <th>Preço Básico</th>
+                            <th>Preço Intermediário</th>
+                            <th>Preço Premium</th>
+                        </tr>`;
+        
+        produto.modelos.forEach(modelo => {
+            tabela += `<tr>
+                            <td>${modelo.nome}</td>
+                            <td>${modelo.preco[0]}</td>
+                            <td>${modelo.preco[1]}</td>
+                            <td>${modelo.preco[2]}</td>
+                        </tr>`;
+        });
+
+        tabela += `</table>`;
+        tabelasDiv.innerHTML += tabela;
+    });
+</script>
+
+</body>
+</html>
